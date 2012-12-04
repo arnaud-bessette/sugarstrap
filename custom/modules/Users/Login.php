@@ -56,7 +56,7 @@ if(isset($_REQUEST['login_language'])){
 }
 $sugar_smarty = new Sugar_Smarty();
 //echo '<link rel="stylesheet" type="text/css" media="all" href="'.getJSPath('modules/Users/login.css').'">';
-echo '<script type="text/javascript" src="'.getJSPath('modules/Users/login.js').'"></script>';
+echo '<script type="text/javascript" src="'.getJSPath('custom/modules/Users/login.js').'"></script>';
 global $app_language, $sugar_config;
 //we don't want the parent module's string file, but rather the string file specifc to this subpanel
 global $current_language;

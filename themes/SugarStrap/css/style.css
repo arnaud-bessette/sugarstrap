@@ -4252,7 +4252,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .btn,
 .navbar .btn-group {
-  margin-top: 5px;
+  margin-top: 0px;
 }
 
 .navbar .btn-group .btn,
@@ -4311,7 +4311,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-search {
   position: relative;
   float: left;
-  margin-top: 5px;
+  margin-top: 4px;
   margin-bottom: 0;
 }
 
@@ -5895,12 +5895,17 @@ a.badge:hover {
 /* General */
 body {
   background:url(/themes/SugarStrap/images/debut_light.png) 0 0 repeat;
-  padding-top:40px;
+  padding-top:60px;
+  padding-bottom:20px;
 }
 
 /* Header */
+#welcome {
+  text-align:right;
+}
 .top-links {
   text-align:right;
+  display:none;
 }
 .top-links ul {
   list-style:none;
@@ -5923,6 +5928,19 @@ body {
   height:auto;
   margin-bottom:15px;
   padding:7px 9px;
+}
+.login-box form {
+  margin:0;
+}
+.forgot-password {
+  float:right;
+  cursor:pointer;
+  padding-top:12px;
+}
+#forgot_password_dialog {
+  padding-top:10px;
+  margin-top:10px;
+  border-top:1px solid #eee;
 }
 
 /* Footer */

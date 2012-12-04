@@ -46,18 +46,10 @@
                 {include file="_companyLogo.tpl" theme_template=true}
             </div>
             <div class="span6">
-                {include file="_globalLinks.tpl" theme_template=true}
-            </div>
-        </div>
-        <div class="row">
-            <div class="span9">
-                {include file="_welcome.tpl" theme_template=true}
-            </div>
-            <div class="span3">
                 {include file="_headerSearch.tpl" theme_template=true}
             </div>
         </div>
-        <div class="row" id="ajaxHeader">
+        <div class="row">
             <div class="span12">
                 {include file="_headerModuleList.tpl" theme_template=true}
             </div>

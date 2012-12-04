@@ -36,34 +36,42 @@
 
 *}
 {if $USE_GROUP_TABS}
-<div id="moduleList">
-<ul>
-    {assign var="groupSelected" value=false}
-    {foreach from=$groupTabs item=modules key=group name=groupList}
-    {capture name=extraparams assign=extraparams}parentTab={$group}{/capture}
-    {if ( ( $smarty.request.parentTab == $group || (!$smarty.request.parentTab && in_array($MODULE_TAB,$modules.modules)) ) && !$groupSelected ) || ($smarty.foreach.groupList.index == 0 && $defaultFirst)}
-    <li class="noBorder">
-        <span class="currentTabLeft">&nbsp;</span><span class="currentTab">
-            <a href="#" id="grouptab_{$smarty.foreach.groupList.index}">{$group}</a>
-        </span><span class="currentTabRight">&nbsp;</span>
-        {assign var="groupSelected" value=true}
-    {else}
-    <li>
-        <span class="notCurrentTabLeft">&nbsp;</span><span class="notCurrentTab">
-        <a href="#" id="grouptab_{$smarty.foreach.groupList.index}">{$group}</a>
-        </span><span class="notCurrentTabRight">&nbsp;</span>
-    {/if}
-    </li>
-    {/foreach}
-</ul>
+<div class="navbar navbar-fixed-top navbar-inverse" id="moduleList">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    {assign var="groupSelected" value=false}
+                    {foreach from=$groupTabs item=modules key=group name=groupList}
+                    {capture name=extraparams assign=extraparams}parentTab={$group}{/capture}
+                    {if ( ( $smarty.request.parentTab == $group || (!$smarty.request.parentTab && in_array($MODULE_TAB,$modules.modules)) ) && !$groupSelected ) || ($smarty.foreach.groupList.index == 0 && $defaultFirst)}
+                    <li class="active">
+                        <a href="#" id="grouptab_{$smarty.foreach.groupList.index}">{$group}</a>
+                        {assign var="groupSelected" value=true}
+                    {else}
+                    <li>
+                        <a href="#" id="grouptab_{$smarty.foreach.groupList.index}">{$group}</a>
+                    {/if}
+                    </li>
+                    {/foreach}
+                </ul>
+                {include file="_welcome.tpl" theme_template=true}
+            </div>
+        </div>
+    </div>
 </div>
-<div class="clear"></div>
-<div id="subModuleList">
-    {assign var="groupSelected" value=false}
-    {foreach from=$groupTabs item=modules key=group name=moduleList}
-    {capture name=extraparams assign=extraparams}parentTab={$group}{/capture}
-    <span id="moduleLink_{$smarty.foreach.moduleList.index}" {if ( ( $smarty.request.parentTab == $group || (!$smarty.request.parentTab && in_array($MODULE_TAB,$modules.modules)) ) && !$groupSelected ) || ($smarty.foreach.moduleList.index == 0 && $defaultFirst)}class="selected" {assign var="groupSelected" value=true}{/if}>
-    	<ul>
+
+{assign var="groupSelected" value=false}
+{foreach from=$groupTabs item=modules key=group name=moduleList}
+{capture name=extraparams assign=extraparams}parentTab={$group}{/capture}
+<div class="navbar visible-desktop" id="moduleLink_{$smarty.foreach.moduleList.index}" {if ( ( $smarty.request.parentTab == $group || (!$smarty.request.parentTab && in_array($MODULE_TAB,$modules.modules)) ) && !$groupSelected ) || ($smarty.foreach.moduleList.index == 0 && $defaultFirst)}class="selected" {assign var="groupSelected" value=true}{/if}>
+    <div class="navbar-inner">
+    	<ul class="nav">
 	        {foreach from=$modules.modules item=module key=modulekey}
 	        <li>
 	        	{capture name=moduleTabId assign=moduleTabId}moduleTab_{$smarty.foreach.moduleList.index}_{$module}{/capture}
@@ -84,9 +92,9 @@
 	        </li>
 	        {/if}	        
         </ul>
-    </span>
-    {/foreach}    
+    </div>
 </div>
+{/foreach}
 {else}
 <div id="moduleList">
 <ul>

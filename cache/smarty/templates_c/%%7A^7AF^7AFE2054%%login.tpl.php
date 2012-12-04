@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.11, created on 2012-12-04 15:08:07
+<?php /* Smarty version 2.6.11, created on 2012-12-04 16:37:41
          compiled from custom/modules/Users/login.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_translate', 'custom/modules/Users/login.tpl', 42, false),array('function', 'sugar_getimagepath', 'custom/modules/Users/login.tpl', 84, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_translate', 'custom/modules/Users/login.tpl', 42, false),)), $this); ?>
 <!--
 /*********************************************************************************
  * SugarCRM Community Edition is a customer relationship management program developed by
@@ -99,17 +99,15 @@ var LBL_HIDEOPTIONS = '<?php echo smarty_function_sugar_translate(array('module'
 			<input title="<?php echo smarty_function_sugar_translate(array('module' => 'Users','label' => 'LBL_LOGIN_BUTTON_TITLE'), $this);?>
 " class="btn btn-large btn-primary" type="submit" tabindex="3" id="login_button" name="Login" value="<?php echo smarty_function_sugar_translate(array('module' => 'Users','label' => 'LBL_LOGIN_BUTTON_LABEL'), $this);?>
 " />
-		</form>
-		
-		<form action="index.php" method="post" name="fp_form" id="fp_form" >
-			<div  style="cursor: hand; cursor: pointer; display:<?php echo $this->_tpl_vars['DISPLAY_FORGOT_PASSWORD_FEATURE']; ?>
+			<div class="forgot-password" style="display:<?php echo $this->_tpl_vars['DISPLAY_FORGOT_PASSWORD_FEATURE']; ?>
 ;" onclick='toggleDisplay("forgot_password_dialog");'>
-				<a href='javascript:void(0)'><IMG src="<?php echo smarty_function_sugar_getimagepath(array('file' => 'advanced_search.gif'), $this);?>
-" border="0" alt="Hide Options" id="forgot_password_dialog_options"><?php echo smarty_function_sugar_translate(array('module' => 'Users','label' => 'LBL_LOGIN_FORGOT_PASSWORD'), $this);?>
+				<a href='javascript:void(0)'><?php echo smarty_function_sugar_translate(array('module' => 'Users','label' => 'LBL_LOGIN_FORGOT_PASSWORD'), $this);?>
 </a>
 			</div>
-
-			<div id="forgot_password_dialog" style="display:none" >
+		</form>
+		
+		<form action="index.php" method="post" name="fp_form" id="fp_form">
+			<div id="forgot_password_dialog" style="display:none">
 				<input type="hidden" name="entryPoint" value="GeneratePassword" />
 				<div id="generate_success" class='error' style="display:inline;"></div>
 				

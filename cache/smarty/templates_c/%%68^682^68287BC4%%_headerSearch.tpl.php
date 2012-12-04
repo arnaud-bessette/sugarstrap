@@ -1,30 +1,15 @@
-<?php /* Smarty version 2.6.11, created on 2012-12-04 13:22:05
+<?php /* Smarty version 2.6.11, created on 2012-12-04 23:05:12
          compiled from themes/SugarStrap/tpls/_headerSearch.tpl */ ?>
-<?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_getimage', 'themes/SugarStrap/tpls/_headerSearch.tpl', 45, false),)), $this); ?>
 <?php if ($this->_tpl_vars['AUTHENTICATED']): ?>
-<div id="search">
-    <form name='UnifiedSearch' action='index.php' onsubmit='return SUGAR.unifiedSearchAdvanced.checkUsaAdvanced()'>
-        <input type="hidden" name="action" value="UnifiedSearch">
-        <input type="hidden" name="module" value="Home">
-        <input type="hidden" name="search_form" value="false">
-        <input type="hidden" name="advanced" value="false">
-        <?php echo smarty_function_sugar_getimage(array('name' => 'searchMore','ext' => ".gif",'alt' => $this->_tpl_vars['APP']['LBL_SEARCH'],'other_attributes' => 'border="0" id="unified_search_advanced_img" '), $this);?>
-&nbsp;
-        <input type="text" name="query_string" id="query_string" size="20" value="<?php echo $this->_tpl_vars['SEARCH']; ?>
-">&nbsp;
-        <input type="submit" class="button" value="<?php echo $this->_tpl_vars['APP']['LBL_SEARCH']; ?>
+<form name='UnifiedSearch' action='index.php' onsubmit='return SUGAR.unifiedSearchAdvanced.checkUsaAdvanced()' class="navbar-search pull-right">
+    <input type="hidden" name="action" value="UnifiedSearch">
+    <input type="hidden" name="module" value="Home">
+    <input type="hidden" name="search_form" value="false">
+    <input type="hidden" name="advanced" value="false">
+    <input type="text" name="query_string" id="query_string" value="<?php echo $this->_tpl_vars['SEARCH']; ?>
+" class="search-query">
+    <input type="submit" class="btn btn-primary" value="<?php echo $this->_tpl_vars['APP']['LBL_SEARCH']; ?>
 ">
-    </form><br />
-    <div id="unified_search_advanced_div"> </div>
-</div>
-<div id="sitemapLink">
-    <span id="sitemapLinkSpan">
-        <?php echo $this->_tpl_vars['APP']['LBL_SITEMAP']; ?>
-
-        <?php echo smarty_function_sugar_getimage(array('name' => 'MoreDetail','alt' => $this->_tpl_vars['app_strings']['LBL_MOREDETAIL'],'ext' => ".png",'other_attributes' => ''), $this);?>
-
-    </span>
-</div>
-<span id='sm_holder'></span>
+</form>
+<div id="unified_search_advanced_div"></div>
 <?php endif; ?>

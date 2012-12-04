@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2012-12-04 16:09:46
+<?php /* Smarty version 2.6.11, created on 2012-12-04 23:05:12
          compiled from themes/SugarStrap/tpls/header.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "themes/SugarStrap/tpls/_head.tpl", 'smarty_include_vars' => array()));
@@ -21,29 +21,13 @@ unset($_smarty_tpl_vars);
             </div>
             <div class="span6">
                 <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "themes/SugarStrap/tpls/_globalLinks.tpl", 'smarty_include_vars' => array()));
-$this->_tpl_vars = $_smarty_tpl_vars;
-unset($_smarty_tpl_vars);
- ?>
-            </div>
-        </div>
-        <div class="row">
-            <div class="span9">
-                <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "themes/SugarStrap/tpls/_welcome.tpl", 'smarty_include_vars' => array()));
-$this->_tpl_vars = $_smarty_tpl_vars;
-unset($_smarty_tpl_vars);
- ?>
-            </div>
-            <div class="span3">
-                <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "themes/SugarStrap/tpls/_headerSearch.tpl", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
             </div>
         </div>
-        <div class="row" id="ajaxHeader">
+        <div class="row">
             <div class="span12">
                 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "themes/SugarStrap/tpls/_headerModuleList.tpl", 'smarty_include_vars' => array()));

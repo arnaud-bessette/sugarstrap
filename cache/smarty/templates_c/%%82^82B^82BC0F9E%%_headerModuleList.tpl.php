@@ -1,49 +1,59 @@
-<?php /* Smarty version 2.6.11, created on 2012-12-04 14:46:13
+<?php /* Smarty version 2.6.11, created on 2012-12-04 23:04:06
          compiled from themes/SugarStrap/tpls/_headerModuleList.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_link', 'themes/SugarStrap/tpls/_headerModuleList.tpl', 70, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_link', 'themes/SugarStrap/tpls/_headerModuleList.tpl', 78, false),)), $this); ?>
 <?php if ($this->_tpl_vars['USE_GROUP_TABS']): ?>
-<div id="moduleList">
-<ul>
-    <?php $this->assign('groupSelected', false); ?>
-    <?php $_from = $this->_tpl_vars['groupTabs']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }$this->_foreach['groupList'] = array('total' => count($_from), 'iteration' => 0);
+<div class="navbar navbar-fixed-top navbar-inverse" id="moduleList">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <?php $this->assign('groupSelected', false); ?>
+                    <?php $_from = $this->_tpl_vars['groupTabs']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }$this->_foreach['groupList'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['groupList']['total'] > 0):
     foreach ($_from as $this->_tpl_vars['group'] => $this->_tpl_vars['modules']):
         $this->_foreach['groupList']['iteration']++;
 ?>
-    <?php ob_start(); ?>parentTab=<?php echo $this->_tpl_vars['group'];  $this->_smarty_vars['capture']['extraparams'] = ob_get_contents();  $this->assign('extraparams', ob_get_contents());ob_end_clean(); ?>
-    <?php if (( ( $_REQUEST['parentTab'] == $this->_tpl_vars['group'] || ( ! $_REQUEST['parentTab'] && in_array ( $this->_tpl_vars['MODULE_TAB'] , $this->_tpl_vars['modules']['modules'] ) ) ) && ! $this->_tpl_vars['groupSelected'] ) || ( ($this->_foreach['groupList']['iteration']-1) == 0 && $this->_tpl_vars['defaultFirst'] )): ?>
-    <li class="noBorder">
-        <span class="currentTabLeft">&nbsp;</span><span class="currentTab">
-            <a href="#" id="grouptab_<?php echo ($this->_foreach['groupList']['iteration']-1); ?>
+                    <?php ob_start(); ?>parentTab=<?php echo $this->_tpl_vars['group'];  $this->_smarty_vars['capture']['extraparams'] = ob_get_contents();  $this->assign('extraparams', ob_get_contents());ob_end_clean(); ?>
+                    <?php if (( ( $_REQUEST['parentTab'] == $this->_tpl_vars['group'] || ( ! $_REQUEST['parentTab'] && in_array ( $this->_tpl_vars['MODULE_TAB'] , $this->_tpl_vars['modules']['modules'] ) ) ) && ! $this->_tpl_vars['groupSelected'] ) || ( ($this->_foreach['groupList']['iteration']-1) == 0 && $this->_tpl_vars['defaultFirst'] )): ?>
+                    <li class="active">
+                        <a href="#" id="grouptab_<?php echo ($this->_foreach['groupList']['iteration']-1); ?>
 "><?php echo $this->_tpl_vars['group']; ?>
 </a>
-        </span><span class="currentTabRight">&nbsp;</span>
-        <?php $this->assign('groupSelected', true); ?>
-    <?php else: ?>
-    <li>
-        <span class="notCurrentTabLeft">&nbsp;</span><span class="notCurrentTab">
-        <a href="#" id="grouptab_<?php echo ($this->_foreach['groupList']['iteration']-1); ?>
+                        <?php $this->assign('groupSelected', true); ?>
+                    <?php else: ?>
+                    <li>
+                        <a href="#" id="grouptab_<?php echo ($this->_foreach['groupList']['iteration']-1); ?>
 "><?php echo $this->_tpl_vars['group']; ?>
 </a>
-        </span><span class="notCurrentTabRight">&nbsp;</span>
-    <?php endif; ?>
-    </li>
-    <?php endforeach; endif; unset($_from); ?>
-</ul>
+                    <?php endif; ?>
+                    </li>
+                    <?php endforeach; endif; unset($_from); ?>
+                </ul>
+                <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "themes/SugarStrap/tpls/_welcome.tpl", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="clear"></div>
-<div id="subModuleList">
-    <?php $this->assign('groupSelected', false); ?>
-    <?php $_from = $this->_tpl_vars['groupTabs']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }$this->_foreach['moduleList'] = array('total' => count($_from), 'iteration' => 0);
+
+<?php $this->assign('groupSelected', false);  $_from = $this->_tpl_vars['groupTabs']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }$this->_foreach['moduleList'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['moduleList']['total'] > 0):
     foreach ($_from as $this->_tpl_vars['group'] => $this->_tpl_vars['modules']):
         $this->_foreach['moduleList']['iteration']++;
-?>
-    <?php ob_start(); ?>parentTab=<?php echo $this->_tpl_vars['group'];  $this->_smarty_vars['capture']['extraparams'] = ob_get_contents();  $this->assign('extraparams', ob_get_contents());ob_end_clean(); ?>
-    <span id="moduleLink_<?php echo ($this->_foreach['moduleList']['iteration']-1); ?>
+ ob_start(); ?>parentTab=<?php echo $this->_tpl_vars['group'];  $this->_smarty_vars['capture']['extraparams'] = ob_get_contents();  $this->assign('extraparams', ob_get_contents());ob_end_clean(); ?>
+<div class="navbar visible-desktop" id="moduleLink_<?php echo ($this->_foreach['moduleList']['iteration']-1); ?>
 " <?php if (( ( $_REQUEST['parentTab'] == $this->_tpl_vars['group'] || ( ! $_REQUEST['parentTab'] && in_array ( $this->_tpl_vars['MODULE_TAB'] , $this->_tpl_vars['modules']['modules'] ) ) ) && ! $this->_tpl_vars['groupSelected'] ) || ( ($this->_foreach['moduleList']['iteration']-1) == 0 && $this->_tpl_vars['defaultFirst'] )): ?>class="selected" <?php $this->assign('groupSelected', true);  endif; ?>>
-    	<ul>
+    <div class="navbar-inner">
+    	<ul class="nav">
 	        <?php $_from = $this->_tpl_vars['modules']['modules']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['modulekey'] => $this->_tpl_vars['module']):
 ?>
@@ -72,10 +82,9 @@ _<?php echo $this->_tpl_vars['module'];  $this->_smarty_vars['capture']['moduleT
 	        </li>
 	        <?php endif; ?>	        
         </ul>
-    </span>
-    <?php endforeach; endif; unset($_from); ?>    
+    </div>
 </div>
-<?php else: ?>
+<?php endforeach; endif; unset($_from);  else: ?>
 <div id="moduleList">
 <ul>
     <?php $_from = $this->_tpl_vars['moduleTopMenu']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }$this->_foreach['moduleList'] = array('total' => count($_from), 'iteration' => 0);
