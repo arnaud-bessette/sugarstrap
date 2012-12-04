@@ -5916,6 +5916,14 @@ body {
   display:inline;
 }
 
+/* Submenu */
+.submenu.navbar .nav {
+  display:none;
+}
+.submenu.navbar .nav.selected {
+  display:block;
+}
+
 /* Login */
 .login-box {
   max-width:300px;

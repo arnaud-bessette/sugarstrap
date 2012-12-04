@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2012-12-04 23:05:12
+<?php /* Smarty version 2.6.11, created on 2012-12-05 00:15:50
          compiled from themes/SugarStrap/tpls/header.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "themes/SugarStrap/tpls/_head.tpl", 'smarty_include_vars' => array()));
@@ -19,7 +19,7 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
             </div>
-            <div class="span6">
+            <div class="span6 hidden-phone">
                 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "themes/SugarStrap/tpls/_headerSearch.tpl", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;

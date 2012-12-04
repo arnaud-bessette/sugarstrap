@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.11, created on 2012-12-04 14:24:52
+<?php /* Smarty version 2.6.11, created on 2012-12-05 00:00:31
          compiled from themes/SugarStrap/tpls/_head.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_getimagepath', 'themes/SugarStrap/tpls/_head.tpl', 58, false),array('function', 'sugar_getjspath', 'themes/SugarStrap/tpls/_head.tpl', 68, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_getimagepath', 'themes/SugarStrap/tpls/_head.tpl', 61, false),array('function', 'sugar_getjspath', 'themes/SugarStrap/tpls/_head.tpl', 71, false),)), $this); ?>
 <!DOCTYPE html>
 <html <?php echo $this->_tpl_vars['langHeader']; ?>
 >
@@ -18,8 +18,11 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_getim
 
 	<link rel="stylesheet" type="text/css" href="/themes/SugarStrap/css/bootstrap-responsive.css" />
 
+	<!-- Le scripts -->
 	<?php echo $this->_tpl_vars['SUGAR_JS']; ?>
 
+	<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
+	<script src="/themes/SugarStrap/js/bootstrap.js"></script>
 
 	<?php echo '
 	<script type="text/javascript">

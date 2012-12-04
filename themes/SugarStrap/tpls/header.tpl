@@ -45,7 +45,7 @@
             <div class="span6">
                 {include file="_companyLogo.tpl" theme_template=true}
             </div>
-            <div class="span6">
+            <div class="span6 hidden-phone">
                 {include file="_headerSearch.tpl" theme_template=true}
             </div>
         </div>

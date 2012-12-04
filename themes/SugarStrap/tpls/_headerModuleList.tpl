@@ -51,11 +51,11 @@
                     {capture name=extraparams assign=extraparams}parentTab={$group}{/capture}
                     {if ( ( $smarty.request.parentTab == $group || (!$smarty.request.parentTab && in_array($MODULE_TAB,$modules.modules)) ) && !$groupSelected ) || ($smarty.foreach.groupList.index == 0 && $defaultFirst)}
                     <li class="active">
-                        <a href="#" id="grouptab_{$smarty.foreach.groupList.index}">{$group}</a>
+                        <a href="#" rel="moduleLink_{$smarty.foreach.groupList.index}">{$group}</a>
                         {assign var="groupSelected" value=true}
                     {else}
                     <li>
-                        <a href="#" id="grouptab_{$smarty.foreach.groupList.index}">{$group}</a>
+                        <a href="#" rel="moduleLink_{$smarty.foreach.groupList.index}">{$group}</a>
                     {/if}
                     </li>
                     {/foreach}
@@ -66,61 +66,76 @@
     </div>
 </div>
 
-{assign var="groupSelected" value=false}
-{foreach from=$groupTabs item=modules key=group name=moduleList}
-{capture name=extraparams assign=extraparams}parentTab={$group}{/capture}
-<div class="navbar visible-desktop" id="moduleLink_{$smarty.foreach.moduleList.index}" {if ( ( $smarty.request.parentTab == $group || (!$smarty.request.parentTab && in_array($MODULE_TAB,$modules.modules)) ) && !$groupSelected ) || ($smarty.foreach.moduleList.index == 0 && $defaultFirst)}class="selected" {assign var="groupSelected" value=true}{/if}>
-    <div class="navbar-inner">
-    	<ul class="nav">
-	        {foreach from=$modules.modules item=module key=modulekey}
-	        <li>
-	        	{capture name=moduleTabId assign=moduleTabId}moduleTab_{$smarty.foreach.moduleList.index}_{$module}{/capture}
-	        	{sugar_link id=$moduleTabId module=$modulekey data=$module extraparams=$extraparams}
-	        </li>
-	        {/foreach}
-	        {if !empty($modules.extra)}
-	        <li class="subTabMore">
-	        	<a>>></a>      
-		        <ul class="cssmenu">
-		        {foreach from=$modules.extra item=submodulename key=submodule}
-					<li>
-						<a href="{sugar_link module=$submodule link_only=1 extraparams=$extraparams}">{$submodulename}
-						</a>
-					</li>
-		        {/foreach}
-		        </ul> 
-	        </li>
-	        {/if}	        
-        </ul>
+<div class="hidden-phone">
+    <div class="navbar submenu">
+        <div class="navbar-inner">
+            {assign var="groupSelected" value=false}
+            {foreach from=$groupTabs item=modules key=group name=moduleList}
+            {capture name=extraparams assign=extraparams}parentTab={$group}{/capture}
+        	<ul class="nav{if ( ( $smarty.request.parentTab == $group || (!$smarty.request.parentTab && in_array($MODULE_TAB,$modules.modules)) ) && !$groupSelected ) || ($smarty.foreach.moduleList.index == 0 && $defaultFirst)} selected{/if}" id="moduleLink_{$smarty.foreach.moduleList.index}" {if ( ( $smarty.request.parentTab == $group || (!$smarty.request.parentTab && in_array($MODULE_TAB,$modules.modules)) ) && !$groupSelected ) || ($smarty.foreach.moduleList.index == 0 && $defaultFirst)}class="selected" {assign var="groupSelected" value=true}{/if}>
+    	        {foreach from=$modules.modules item=module key=modulekey}
+    	        <li>
+    	        	{capture name=moduleTabId assign=moduleTabId}moduleTab_{$smarty.foreach.moduleList.index}_{$module}{/capture}
+    	        	{sugar_link id=$moduleTabId module=$modulekey data=$module extraparams=$extraparams}
+    	        </li>
+    	        {/foreach}
+    	        {if !empty($modules.extra)}
+    	        <li class="dropdown">
+    	        	<a href="#" id="drop1" role="button" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+    		        <ul class="dropdown-menu" aria-labelledby="drop1">
+    		        {foreach from=$modules.extra item=submodulename key=submodule}
+    					<li>
+    						<a href="{sugar_link module=$submodule link_only=1 extraparams=$extraparams}">{$submodulename}
+    						</a>
+    					</li>
+    		        {/foreach}
+    		        </ul> 
+    	        </li>
+    	        {/if}	        
+            </ul>
+            {/foreach}
+        </div>
     </div>
 </div>
-{/foreach}
+<div class="visible-phone">
+    <select class="nav{if ( ( $smarty.request.parentTab == $group || (!$smarty.request.parentTab && in_array($MODULE_TAB,$modules.modules)) ) && !$groupSelected ) || ($smarty.foreach.moduleList.index == 0 && $defaultFirst)} selected{/if}" id="moduleLink_{$smarty.foreach.moduleList.index}" {if ( ( $smarty.request.parentTab == $group || (!$smarty.request.parentTab && in_array($MODULE_TAB,$modules.modules)) ) && !$groupSelected ) || ($smarty.foreach.moduleList.index == 0 && $defaultFirst)}class="selected" {assign var="groupSelected" value=true}{/if}>
+        {foreach from=$modules.modules item=module key=modulekey}
+        <option value="{sugar_link module=$submodule link_only=1 extraparams=$extraparams}">{sugar_link id=$moduleTabId module=$modulekey data=$module extraparams=$extraparams}</option>
+        {/foreach}
+    </select>
+</div>
 {else}
-<div id="moduleList">
-<ul>
-    {foreach from=$moduleTopMenu item=module key=name name=moduleList}
-    {if $name == $MODULE_TAB}
-    <li class="selected">{sugar_link id="moduleTab_$name" module=$name}
-    {else}
-    <li>{sugar_link id="moduleTab_$name" module=$name data=$module}
-    {/if}
-    </li>
-    {/foreach}
-    {if count($moduleExtraMenu) > 0}
-    <li id="moduleTabExtraMenu">
-        <a href="#">&gt;&gt;</a><br />
-        <ul class="cssmenu">
-            {foreach from=$moduleExtraMenu item=module key=name name=moduleList}
-            <li>{sugar_link id="moduleTab_$name" module=$name data=$module}
-            {/foreach}
-        </ul>        
-    </li>
-    {/if}
-</ul>
+<div class="navbar navbar-fixed-top navbar-inverse" id="moduleList">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    {foreach from=$moduleTopMenu item=module key=name name=moduleList}
+                    {if $name == $MODULE_TAB}
+                    <li class="active">{sugar_link id="moduleTab_$name" module=$name}
+                    {else}
+                    <li>{sugar_link id="moduleTab_$name" module=$name data=$module}
+                    {/if}
+                    </li>
+                    {/foreach}
+                    {if count($moduleExtraMenu) > 0}
+                    <li id="dropdown">
+                        <a href="#" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+                        <ul class="dropdown-menu" aria-labelledby="drop2">
+                            {foreach from=$moduleExtraMenu item=module key=name name=moduleList}
+                            <li>{sugar_link id="moduleTab_$name" module=$name data=$module}
+                            {/foreach}
+                        </ul>        
+                    </li>
+                    {/if}
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 {/if}
-
-    {if $AUTHENTICATED}
-    {include file="_headerLastViewed.tpl" theme_template=true}
-    {include file="_headerShortcuts.tpl" theme_template=true}
-    {/if}

@@ -48,7 +48,10 @@
 	{$SUGAR_CSS}
 	<link rel="stylesheet" type="text/css" href="/themes/SugarStrap/css/bootstrap-responsive.css" />
 
+	<!-- Le scripts -->
 	{$SUGAR_JS}
+	<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
+	<script src="/themes/SugarStrap/js/bootstrap.js"></script>
 
 	{literal}
 	<script type="text/javascript">

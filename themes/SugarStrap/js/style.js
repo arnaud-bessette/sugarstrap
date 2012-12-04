@@ -62,3 +62,21 @@ this.allMenuBars[i].destroy();}}catch(e){window.location.reload();}
 if(el.hasChildNodes()){while(el.childNodes.length>=1){el.removeChild(el.firstChild);}}
 el.innerHTML+=html;this.loadModuleList();}},actionMenu:function(){$("ul.clickMenu").each(function(index,node){$(node).sugarActionMenu();});},loadModuleList:function(){var nodes=YAHOO.util.Selector.query('#moduleList>div'),currMenuBar;this.allMenuBars={};for(var i=0;i<nodes.length;i++){currMenuBar=SUGAR.themes.currMenuBar=new YAHOO.widget.MenuBar(nodes[i].id,{autosubmenudisplay:true,visible:false,hidedelay:750,lazyload:true});currMenuBar.render();this.allMenuBars[nodes[i].id.substr(nodes[i].id.indexOf('_')+1)]=currMenuBar;if(typeof YAHOO.util.Dom.getChildren(nodes[i])=='object'&&YAHOO.util.Dom.getChildren(nodes[i]).shift().style.display!='none'){oMenuBar=currMenuBar;}}
 YAHOO.util.Event.onAvailable('subModuleList',IKEADEBUG);},setCurrentTab:function(){}});YAHOO.util.Event.onDOMReady(SUGAR.themes.loadModuleList,SUGAR.themes,true);
+
+$(document).ready(function()
+{
+	var navbarLink = $('#moduleList ul a');
+	var submenu = $('.submenu ul.nav');
+	navbarLink.click(function()
+	{
+		navbarLink.parent('li').removeClass('active');
+		$(this).parent('li').addClass('active');
+
+		var submenuID = $(this).attr('rel');
+		console.log(submenuID);
+		submenu.removeClass('selected');
+		$('#'+submenuID).addClass('selected');
+
+		return false;
+	});
+});
