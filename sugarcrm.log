@@ -1,0 +1,10 @@
+Tue Dec  4 09:10:54 2012 [9321][-none-][FATAL] Could not connect to DB server sugarcrm.se as root. port : Can't connect to MySQL server on 'sugarcrm.se' (61)
+Tue Dec  4 09:10:54 2012 [9321][-none-][FATAL] Could Not Connect: Database Is Not Connected
+Tue Dec  4 09:10:54 2012 [9321][-none-][FATAL]  Query Failed: SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '' LIMIT 0,1: Database Is Not Connected
+Tue Dec  4 09:10:54 2012 [9321][-none-][FATAL]  Get One Failed:SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '': Database Is Not Connected
+Tue Dec  4 09:10:54 2012 [9321][-none-][FATAL]  Query Failed: SELECT version() version LIMIT 0,1: Database Is Not Connected
+Tue Dec  4 09:10:54 2012 [9321][-none-][FATAL]  Get One Failed:SELECT version() version: Database Is Not Connected
+Tue Dec  4 13:20:10 2012 [11117][-none-][FATAL] FAILED LOGIN:attempts[1] - 
+Tue Dec  4 13:22:49 2012 [11117][-none-][FATAL] FAILED LOGIN:attempts[1] - admin
+Tue Dec  4 14:48:30 2012 [11353][-none-][FATAL] FAILED LOGIN:attempts[1] - admin
+Tue Dec  4 15:25:33 2012 [11353][-none-][FATAL] FAILED LOGIN:attempts[1] - admin
