@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.11, created on 2012-12-05 00:15:21
+<?php /* Smarty version 2.6.11, created on 2012-12-05 16:23:49
          compiled from themes/SugarStrap/tpls/_headerModuleList.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_link', 'themes/SugarStrap/tpls/_headerModuleList.tpl', 79, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_link', 'themes/SugarStrap/tpls/_headerModuleList.tpl', 78, false),)), $this); ?>
 <?php if ($this->_tpl_vars['USE_GROUP_TABS']): ?>
 <div class="navbar navbar-fixed-top navbar-inverse" id="moduleList">
     <div class="navbar-inner">
@@ -83,9 +83,19 @@ _<?php echo $this->_tpl_vars['module'];  $this->_smarty_vars['capture']['moduleT
     		        <?php endforeach; endif; unset($_from); ?>
     		        </ul> 
     	        </li>
-    	        <?php endif; ?>	        
+    	        <?php endif; ?>
             </ul>
             <?php endforeach; endif; unset($_from); ?>
+            <ul class="nav extra pull-right">
+                <li class="dropdown">
+                    <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Links <b class="caret"></b></a>
+                    <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "themes/SugarStrap/tpls/_globalLinks.tpl", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

@@ -71,4 +71,6 @@
     {/literal}
 
     <section id="main" role="main">
-        <div class="row" id="content">
+        <div class="row">
+            <div class="span12">
+                <div id="content">

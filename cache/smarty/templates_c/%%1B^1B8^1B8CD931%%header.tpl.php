@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2012-12-05 09:36:48
+<?php /* Smarty version 2.6.11, created on 2012-12-05 17:08:21
          compiled from themes/SugarStrap/tpls/header.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "themes/SugarStrap/tpls/_head.tpl", 'smarty_include_vars' => array()));
@@ -53,4 +53,6 @@ unset($_smarty_tpl_vars);
 
 
     <section id="main" role="main">
-        <div class="row" id="content">
+        <div class="row">
+            <div class="span12">
+                <div id="content">

@@ -137,13 +137,13 @@ mySugarLoader.insert();
 <div class="clear"></div>
 <div id="pageContainer" class="yui-skin-sam">
 -->
-<div class="span12">
-	{if !$lock_homepage}<input id="add_dashlets" class="button" type="button" value="{$lblAddDashlets}" onclick="return SUGAR.mySugar.showDashletsDialog();"/>{/if}
+<div class="row">
+	<div class="span12">
+	{if !$lock_homepage}<input id="add_dashlets" class="btn btn-large btn-primary pull-right" type="button" value="{$lblAddDashlets}" onclick="return SUGAR.mySugar.showDashletsDialog();"/>{/if}
+	</div>
 </div>
 
-<div class="clear"></div>
-
-<div id="pageNum_{$activePage}_div">
+<div class="row" id="pageNum_{$activePage}_div">
 	{counter assign=hiddenCounter start=0 print=false}
 	{foreach from=$columns key=colNum item=data}
 	<div class="span6">

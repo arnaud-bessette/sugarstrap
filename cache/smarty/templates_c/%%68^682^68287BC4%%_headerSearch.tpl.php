@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2012-12-05 00:00:52
+<?php /* Smarty version 2.6.11, created on 2012-12-05 16:23:48
          compiled from themes/SugarStrap/tpls/_headerSearch.tpl */ ?>
 <?php if ($this->_tpl_vars['AUTHENTICATED']): ?>
 <form name='UnifiedSearch' action='index.php' onsubmit='return SUGAR.unifiedSearchAdvanced.checkUsaAdvanced()' class="search pull-right">

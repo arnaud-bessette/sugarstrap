@@ -36,6 +36,8 @@
 
 *}
 <!--end body panes-->
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="span12" id="bottomLinks">

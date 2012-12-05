@@ -33,7 +33,6 @@
  * technical reasons, the Appropriate Legal Notices must display the words
  * "Powered by SugarCRM".
  ********************************************************************************/
-
 *}
 {if $USE_GROUP_TABS}
 <div class="navbar navbar-fixed-top navbar-inverse" id="moduleList">
@@ -91,9 +90,15 @@
     		        {/foreach}
     		        </ul> 
     	        </li>
-    	        {/if}	        
+    	        {/if}
             </ul>
             {/foreach}
+            <ul class="nav extra pull-right">
+                <li class="dropdown">
+                    <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Links <b class="caret"></b></a>
+                    {include file="_globalLinks.tpl" theme_template=true}
+                </li>
+            </ul>
         </div>
     </div>
 </div>

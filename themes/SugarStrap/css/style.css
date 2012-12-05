@@ -126,6 +126,9 @@ textarea {
   vertical-align: top;
 }
 
+.clear {
+  clear:both;
+}
 .clearfix {
   *zoom: 1;
 }
@@ -3715,7 +3718,8 @@ input[type="submit"].btn.btn-mini {
           border-radius: 0 0 6px 6px;
 }
 
-.alert {
+.alert, p.error {
+  display:block;
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
   color: #c09853;
@@ -5919,7 +5923,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 .top-links {
   text-align:right;
-  display:none;
+  display:block;
 }
 .top-links ul {
   list-style:none;
@@ -5934,7 +5938,7 @@ h1,h2,h3,h4,h5,h6 {
 .submenu.navbar .nav {
   display:none;
 }
-.submenu.navbar .nav.selected {
+.submenu.navbar .nav.selected, .submenu.navbar .nav.extra {
   display:block;
 }
 
@@ -5983,4 +5987,26 @@ footer #copyright {
 .dashletPanel h3 {
   margin-top:0;
   line-height:20px;
+}
+
+/* Module title */
+.moduleTitle {
+  border-bottom:1px solid #eee;
+  margin-bottom:10px;
+}
+h2 {
+  float:left;
+}
+.utils {
+  float:right;
+}
+#create_image {
+  display:none;
+}
+
+
+/* Views */
+#EditView, .listViewBody {
+  background:#fff;
+  padding:10px;
 }

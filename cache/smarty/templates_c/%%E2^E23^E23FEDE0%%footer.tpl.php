@@ -1,6 +1,8 @@
-<?php /* Smarty version 2.6.11, created on 2012-12-04 15:29:09
+<?php /* Smarty version 2.6.11, created on 2012-12-05 16:56:36
          compiled from themes/SugarStrap/tpls/footer.tpl */ ?>
 <!--end body panes-->
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="span12" id="bottomLinks">
