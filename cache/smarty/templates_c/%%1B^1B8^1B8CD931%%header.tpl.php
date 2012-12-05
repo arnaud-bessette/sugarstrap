@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2012-12-05 17:08:21
+<?php /* Smarty version 2.6.11, created on 2012-12-05 21:17:39
          compiled from themes/SugarStrap/tpls/header.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "themes/SugarStrap/tpls/_head.tpl", 'smarty_include_vars' => array()));
