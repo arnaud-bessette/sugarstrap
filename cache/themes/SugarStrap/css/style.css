@@ -5958,6 +5958,20 @@ body {
   padding-top:60px;
   padding-bottom:20px;
 }
+iframe {
+  width:100%;
+  border:none;
+}
+.noBullet {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+/* Typography */
+h1,h2,h3,h4,h5,h6 {
+  font-weight:normal;
+}
 
 /* Header */
 #welcome {
@@ -6018,4 +6032,15 @@ footer #responseTime, footer #copyright {
 }
 footer #copyright {
   text-align:right;
+}
+
+/* Dashlets */
+.dashletPanel {
+  background:#fff;
+  padding:10px;
+  margin-bottom:20px;
+}
+.dashletPanel h3 {
+  margin-top:0;
+  line-height:20px;
 }
