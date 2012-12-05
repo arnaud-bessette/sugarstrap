@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2012-12-05 09:25:00
+<?php /* Smarty version 2.6.11, created on 2012-12-05 16:33:54
          compiled from custom/include/MySugar/tpls/MySugar.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_getscript', 'custom/include/MySugar/tpls/MySugar.tpl', 60, false),array('function', 'sugar_getjspath', 'custom/include/MySugar/tpls/MySugar.tpl', 119, false),array('function', 'counter', 'custom/include/MySugar/tpls/MySugar.tpl', 147, false),)), $this); ?>
@@ -118,14 +118,14 @@ mySugarLoader.insert();
 <div class="clear"></div>
 <div id="pageContainer" class="yui-skin-sam">
 -->
-<div class="span12">
-	<?php if (! $this->_tpl_vars['lock_homepage']): ?><input id="add_dashlets" class="button" type="button" value="<?php echo $this->_tpl_vars['lblAddDashlets']; ?>
+<div class="row">
+	<div class="span12">
+	<?php if (! $this->_tpl_vars['lock_homepage']): ?><input id="add_dashlets" class="btn btn-large btn-primary pull-right" type="button" value="<?php echo $this->_tpl_vars['lblAddDashlets']; ?>
 " onclick="return SUGAR.mySugar.showDashletsDialog();"/><?php endif; ?>
+	</div>
 </div>
 
-<div class="clear"></div>
-
-<div id="pageNum_<?php echo $this->_tpl_vars['activePage']; ?>
+<div class="row" id="pageNum_<?php echo $this->_tpl_vars['activePage']; ?>
 _div">
 	<?php echo smarty_function_counter(array('assign' => 'hiddenCounter','start' => 0,'print' => false), $this);?>
 

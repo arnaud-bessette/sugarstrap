@@ -1,5 +1,5 @@
 <?php
-// created: 2012-12-04 13:22:07
+// created: 2012-12-05 16:30:01
 $dashletsFiles = array (
   'MyAccountsDashlet' => 
   array (
@@ -107,42 +107,42 @@ $dashletsFiles = array (
   ),
   'ChartsDashlet' => 
   array (
-    'file' => 'modules/Home/Dashlets/ChartsDashlet/ChartsDashlet.php',
+    'file' => 'custom/modules/Home/Dashlets/ChartsDashlet/ChartsDashlet.php',
     'class' => 'ChartsDashlet',
-    'meta' => 'modules/Home/Dashlets/ChartsDashlet/ChartsDashlet.meta.php',
+    'meta' => 'custom/modules/Home/Dashlets/ChartsDashlet/ChartsDashlet.meta.php',
   ),
   'iFrameDashlet' => 
   array (
-    'file' => 'modules/Home/Dashlets/iFrameDashlet/iFrameDashlet.php',
+    'file' => 'custom/modules/Home/Dashlets/iFrameDashlet/iFrameDashlet.php',
     'class' => 'iFrameDashlet',
-    'meta' => 'modules/Home/Dashlets/iFrameDashlet/iFrameDashlet.meta.php',
+    'meta' => 'custom/modules/Home/Dashlets/iFrameDashlet/iFrameDashlet.meta.php',
     'module' => 'Home',
   ),
   'InvadersDashlet' => 
   array (
-    'file' => 'modules/Home/Dashlets/InvadersDashlet/InvadersDashlet.php',
+    'file' => 'custom/modules/Home/Dashlets/InvadersDashlet/InvadersDashlet.php',
     'class' => 'InvadersDashlet',
-    'meta' => 'modules/Home/Dashlets/InvadersDashlet/InvadersDashlet.meta.php',
-    'icon' => 'modules/Home/Dashlets/InvadersDashlet/InvadersDashlet.icon.jpg',
+    'meta' => 'custom/modules/Home/Dashlets/InvadersDashlet/InvadersDashlet.meta.php',
+    'icon' => 'custom/modules/Home/Dashlets/InvadersDashlet/InvadersDashlet.icon.jpg',
   ),
   'JotPadDashlet' => 
   array (
-    'file' => 'modules/Home/Dashlets/JotPadDashlet/JotPadDashlet.php',
+    'file' => 'custom/modules/Home/Dashlets/JotPadDashlet/JotPadDashlet.php',
     'class' => 'JotPadDashlet',
-    'meta' => 'modules/Home/Dashlets/JotPadDashlet/JotPadDashlet.meta.php',
+    'meta' => 'custom/modules/Home/Dashlets/JotPadDashlet/JotPadDashlet.meta.php',
   ),
   'RSSDashlet' => 
   array (
-    'file' => 'modules/Home/Dashlets/RSSDashlet/RSSDashlet.php',
+    'file' => 'custom/modules/Home/Dashlets/RSSDashlet/RSSDashlet.php',
     'class' => 'RSSDashlet',
-    'meta' => 'modules/Home/Dashlets/RSSDashlet/RSSDashlet.meta.php',
-    'icon' => 'modules/Home/Dashlets/RSSDashlet/RSSDashlet.icon.jpg',
+    'meta' => 'custom/modules/Home/Dashlets/RSSDashlet/RSSDashlet.meta.php',
+    'icon' => 'custom/modules/Home/Dashlets/RSSDashlet/RSSDashlet.icon.jpg',
   ),
   'SugarNewsDashlet' => 
   array (
-    'file' => 'modules/Home/Dashlets/SugarNewsDashlet/SugarNewsDashlet.php',
+    'file' => 'custom/modules/Home/Dashlets/SugarNewsDashlet/SugarNewsDashlet.php',
     'class' => 'SugarNewsDashlet',
-    'meta' => 'modules/Home/Dashlets/SugarNewsDashlet/SugarNewsDashlet.meta.php',
+    'meta' => 'custom/modules/Home/Dashlets/SugarNewsDashlet/SugarNewsDashlet.meta.php',
     'module' => 'Home',
   ),
   'MyLeadsDashlet' => 
