@@ -35,6 +35,8 @@ if(!defined('sugarEntry'))define('sugarEntry', true);
  * "Powered by SugarCRM".
  ********************************************************************************/
 
+require_once('vqmod/vqmod.php');
+$vqmod = new VQMod();
 
 include ('include/MVC/preDispatch.php');
 $startTime = microtime(true);
